@@ -1,0 +1,38 @@
+celsius = 43
+fahrenheit = (9 / 5) * celsius + 32
+print(fahrenheit)
+
+radius = input("请输入半径")
+radius = float(radius)
+area = (radius * radius * 3.14159)
+area = round(area,4)
+print(area)
+length = input("请输入高")
+length = int(length)
+volume = area * length
+volume = round(volume,1)
+print(volume)
+
+feet = input("请输入英尺数")
+feet = float(feet)
+meters = feet * 0.305
+print(meters)
+
+M = eval(input("请输入以千克计算的水量"))
+initialTemperature = eval(input("请输入初始温度"))
+finalTemperature = eval(input("请输入最终温度"))
+Q = M * (finalTemperature - initialTemperature) * 4184
+print(Q)
+
+balance = eval(input("请输入差额"))
+interestrate = eval(input("请输入百分比的年利率"))
+interest = balance * ( interestrate / 1200 )
+interest = round(interest,5)
+print(interest)
+
+v0 = eval(input("请输入初始速度"))
+v1 = eval(input("请输入末速度"))
+t = eval(input("请输入所占用的时间"))
+a = (v1 - v0) / t
+a = round(a,4)
+print(a)
