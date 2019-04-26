@@ -1,0 +1,92 @@
+import math         # 导入数据库 ！
+r = eval(input("请输入一个半径"))
+s = 2 * r * math.sin(math.pi/5)
+Area = 5 * s * s / (4 * math.tan(math.pi/5))
+Area = round(Area,2)
+print(Area)
+#   半径5.5，五边形面积71.92 
+
+x1,y1 = eval(input("请输入第一个点的经度和纬度"))
+x2,y2 = eval(input("请输入第二个点的经度和纬度"))
+x1 = math.radians(x1)
+y1 = math.radians(y1)
+x2 = math.radians(x2)
+y2 = math.radians(y2)
+radius = 6371.01
+d = radius * math.acos(math.sin(x1) * math.sin(x2) + math.cos(x1) * math.cos(x2) * math.cos(y1 - y2))
+print(d) 
+#    39.55，-116.25 
+     41.5，87.37 
+     d (大圆距离)= 10691.79183231593 
+
+s = eval(input("请输入一个边长"))
+Area = 5 * math.pow(s,2)/(4 * math.tan(math.pi/5))
+print(Area)
+#    s = 5.5 
+     Area（五边形） = 52.04444136781625 
+
+s = eval(input("请输入边数"))
+n = eval(input("请输入边长"))
+Area = n * math.pow(s,2)/(4 * math.tan(math.pi/n))
+print(Area)
+#    s = 6.5 
+     n = 51 
+     Area（正多边形） = 72.69017017488385 
+
+chr(69)
+#   'E' 
+
+name = input('输入雇员名字')
+H = eval(input('输入一周工作时间'))
+P = eval(input('输入工资率'))
+F = eval(input('联邦扣除率'))
+S = eval(input('州加扣除率'))
+G = p * H
+federal = G * F
+state = G * S
+total = federal + state
+net_pay = G - total
+print('Employee Name:',name)
+print('Hours Worked',H)
+print('Pay Rate',P)
+print('Cross Pay',G)
+print('Deductions:')
+print('Federal Withholding (20.0%):',federal)
+print('State Withholding (9.0%):',state)
+print('Total Deduction:',total)  
+print(net_pay)
+#    输入雇员名字Smith
+     输入一周工作时间10
+     输入工资率9.75
+     联邦扣除率0.20
+     州加扣除率0.09
+     Employee Name: Smith
+     Hours Worked 10
+     Pay Rate 9.75
+     Cross Pay 97.5
+     Deductions:
+     Federal Withholding (20.0%): 19.5
+     State Withholding (9.0%): 8.775
+     Total Deduction: 28.275
+      69.225
+
+a = 3125
+b = a % 312
+c = a // 10 % 31
+d = a // 100 % 3
+e = a // 1000
+print(b,c,d,e)
+#     5 2 1 3 ！
+
+a = chr(ord('1') + 1)
+b = chr(ord('5') + 5)
+c = chr(ord('3') + 10)
+d = chr(ord('@') * 2)
+e = chr(ord('1') - 19)
+f = chr(ord('8') + 8)
+g = chr(ord('9') + 13)
+h = chr(ord('.') + 4)
+i = chr(ord('c') + 1)
+j = chr(ord('n') - 10)
+print(a,b,c,d,e,f,g,h,i,j)
+#     2 : =   @ F 2 d d !!!
