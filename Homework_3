@@ -1,0 +1,173 @@
+# 第一题
+import math
+for i in range(1,4):
+    a,b,c = eval(input("请分别输入a,b,c的值"))
+    x = math.pow(b,2)-4*a*c
+    R1 = (-b + x **(1/2)) / 2 * a
+    R2 = (-b - x **(1/2)) / 2 * a
+    R1 = round(R1,6)
+    R2 = round(R2,5)
+    if x > 0:
+        print(R1,R2,sep=' and ')
+    elif x == 0:
+        print('The root is ',R1 or R2)
+    else:
+        print('The equation has no real roots')
+ #  请分别输入a,b,c的值1.0,3,1
+    -0.3819660112501051 and -2.618033988749895
+    请分别输入a,b,c的值1,2.0,1
+    The root is  -1.0
+    请分别输入a,b,c的值1,2,3
+    The equation has no real roots
+  
+ # 第二题
+import random
+number_1 = random.randrange(0,100)
+number_2 = random.randrange(0,100)
+print(number_1)
+print(number_2)
+x = eval(input("请输入两个数字的和"))
+if x == number_1 + number_2:
+    print("正确！")
+else:
+    print("错啦！")
+# 21
+  76
+  请输入两个数字的和97
+  正确！
+
+# 第三题
+  for i in range(0,2):
+    today = eval(input("请输入今天是星期几（星期天：0，星期一：1......星期六：6）"))
+    future = eval(input("请输入今天之后到未来某天的天数"))
+    result = (today +  future) % 7
+    print(result)
+ #  请输入今天是星期几（星期天：0，星期一：1......星期六：6）1
+    请输入今天之后到未来某天的天数3
+    4
+    请输入今天是星期几（星期天：0，星期一：1......星期六：6）0
+    请输入今天之后到未来某天的天数31
+    3
+    
+# 第四题
+    a = eval(input("请输入第一个任意整数："))
+b = eval(input("请输入第二个任意整数："))
+c = eval(input("请输入第三个任意整数；"))
+if a < b < c:
+    print(a,b,c)
+elif a < c < b:
+    print(a,c,b)
+elif b < a < c:
+    print(b,a,c)
+elif b < c < a:
+    print(b,c,a)
+elif c < b < a:
+    print(c,b,a)
+elif c < a < b:
+    print(c,a,b)
+else:
+    print(a,b,c)
+#   请输入第一个任意整数：1
+    请输入第二个任意整数：4
+    请输入第三个任意整数；5
+    1 4 5
+ 
+# 第五题
+weight_1,price_1 = eval(input("请输入第一种大米的重量和价钱："))
+weight_2,price_2 = eval(input("请输入第二种大米的重量和价钱："))
+if weight_1 == weight_2:
+    if price_1 < price_2:
+        print("第一种包装的大米更好")
+elif price_1 > price_2:
+    print("第二种包装的大米更好")
+ #  请输入第一种大米的重量和价钱50,24.59
+    请输入第二种大米的重量和价钱25,11.99
+    第二种包装的大米更好
+
+# 第六题
+for i in range(0,2):
+    month = eval(input("请输入月份："))
+    year = eval(input("请输入年："))
+    year_1 = year % 400
+    year_2 = year % 4
+    year_3 = year % 100
+    if (year_1 == 0) or (year_2 == 0 and year_3 != 0):
+        if month != 2:
+            if (month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or month == 10 or month == 12):
+                print("本月31天")
+            else:
+                print("本月30天")
+        else:
+            print("本月29天")
+    else:
+        if month != 2:
+            if (month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or month == 10 or month == 12):
+                print("本月31天")
+            else:
+                print("本月30天")
+        else:
+            print("本月28天")
+    #   请输入月份：2
+        请输入年：2000
+        本月29天
+        请输入月份：3
+        请输入年：2005
+        本月31天
+        
+# 第七题
+import random
+value = eval(input("请输入一个猜测值【1：正面，0：反面】"))
+face = random.randint(0,1)
+if face == value:
+    print("正确")
+else:
+    print("错误")
+#   请输入一个猜测值【1：正面，0：反面】1
+    正确
+ 
+ # 第八题，第九题略
+ 
+ # 第十题
+ x = random.randint(1,13)
+if x == 1:
+    print('Ace')
+elif x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 7 or x == 8 or x == 9 or x == 10:
+    print(x)
+elif x == 11:
+    print('Jack')
+elif x == 12:
+    print('Queen')
+elif x == 13:
+    print('King')
+y = random.randint(1,4)
+if y == 1:
+    print('梅花')
+elif y == 2:
+    print('红桃')
+elif y == 3:
+    print('方块')
+elif y == 4:
+    print('黑桃')
+print(x,y,sep=' and ')
+#   4
+    方块
+    4 and 3
+ 
+# 第十一题
+x = input('请任意输入一个三位整数')
+if x[0] == x[2]:
+    print(x,'is a palindrome')
+else:
+    print(x,'is not a palindrome')
+#   请任意输入一个三位整数123
+    123 is not a palindrome
+    
+ # 第十二题
+ a,b,c = eval(input("请分别输入三角形的三个边长"))
+if (a + b) > c and (a + c) > b and(b + c) > a: 
+    L = a + b + c 
+    print(L)
+else:
+    print('不是三角形')
+  #   请分别输入三角形的三个边长1,1,1
+      3
