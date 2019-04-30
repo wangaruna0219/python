@@ -5,9 +5,9 @@ for i in range(1,4):
     x = math.pow(b,2)-4*a*c
     R1 = (-b + x **(1/2)) / 2 * a
     R2 = (-b - x **(1/2)) / 2 * a
-    R1 = round(R1,6)
-    R2 = round(R2,5)
     if x > 0:
+        R1 = round(R1,6)
+        R2 = round(R2,5)
         print(R1,R2,sep=' and ')
     elif x == 0:
         print('The root is ',R1 or R2)
