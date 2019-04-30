@@ -125,7 +125,23 @@ else:
 #   请输入一个猜测值【1：正面，0：反面】1
     正确
  
- #  第八题，第九题略
+ #  第八题
+import random
+number = random.randint(0,2)
+print(number)
+value = eval(input("请输入0、1或2三个中的任意一个【0：剪刀，1：石头，2：布】"))
+if number > value:
+    print('You are rock.')
+    if number < value:
+        print('You won.')
+else:
+    print('dogfall.')
+  #   1
+      请输入0、1或2三个中的任意一个【0：剪刀，1：石头，2：布】1
+      dogfall.
+      9
+ 
+ #  第九题略
  
  #  第十题
 x = random.randint(1,13)
