@@ -1,0 +1,259 @@
+1、五角数
+def wjs():
+    n = 0
+    count = 0
+    for i in range(1,101):
+        n += 1
+        i += 1
+        x = n*(3*n-1)/2
+        print(int(x),end=' ')
+        count += 1
+        if count % 10 == 0:
+            print()
+wjs()
+            
+结果：
+    1 5 12 22 35 51 70 92 117 145 
+    176 210 247 287 330 376 425 477 532 590 
+    651 715 782 852 925 1001 1080 1162 1247 1335 
+    1426 1520 1617 1717 1820 1926 2035 2147 2262 2380 
+    2501 2625 2752 2882 3015 3151 3290 3432 3577 3725 
+    3876 4030 4187 4347 4510 4676 4845 5017 5192 5370 
+    5551 5735 5922 6112 6305 6501 6700 6902 7107 7315 
+    7526 7740 7957 8177 8400 8626 8855 9087 9322 9560 
+    9801 10045 10292 10542 10795 11051 11310 11572 11837 12105 
+    12376 12650 12927 13207 13490 13776 14065 14357 14652 14950 
+    
+2、求一个整数各个数字和
+def zsh(Z):
+    G = Z % 10
+    S = Z // 10 % 10
+    B = Z // 100
+    H = B + S + G
+    print(B,'+',S,'+',G)
+    print(H)
+Z = eval(input('请输入一个整数（三位数）：'))
+zsh(Z)
+
+结果：
+     请输入一个整数（三位数）：234
+      2 + 3 + 4
+      9
+      
+3、排序
+def paixu(n1,n2,n3):
+    if n1 > n2 and n2 > n3:
+        print(n3,n2,n1,end=' ')
+    elif n1 > n3 and n3 > n2:
+        print(n2,n3,n1,end=' ')
+    elif n2 > n1 and n1 > n3:
+        print(n3,n1,n2,end=' ')
+    elif n2 > n3 and n3 > n1:
+        print(n1,n3,n2,end=' ')
+    elif n3 > n2 and n2 > n1:
+        print(n1,n2,n3,end=' ')
+    elif n3 > n1 and n1 > n2:
+        print(n2,n1,n3,end=' ')
+for i in range(0,2):
+    x,y,z = eval(input('Enter three numbers(n1,n2,n3):'))
+    print(x,y,z)
+    paixu(x,y,z)
+    print( )
+    i += 1
+
+结果：
+    Enter three numbers(n1,n2,n3):3,2.4,5
+    3 2.4 5
+    2.4 3 5 
+    Enter three numbers(n1,n2,n3):31,12.4,15
+    31 12.4 15
+    12.4 15 31 
+    
+4、计算未来投资值
+import math
+def futureIV(IA,year,years):
+    for i in range(0,30):
+            FV = IA * math.pow((1 + year/100),i)
+            i += 1
+            print(i,FV)
+IA = eval(input('The amount invested:'))
+year = eval(input('Annual interest rate:'))
+futureIV(IA,year,30)
+
+结果：
+     The amount invested:1000
+      Annual interest rate:9
+      1 1000.0
+      2 1090.0
+      3 1188.1000000000001
+      4 1295.0290000000002
+      5 1411.5816100000004
+      6 1538.6239549000004
+      7 1677.1001108410007
+      8 1828.039120816691
+      9 1992.5626416901935
+      10 2171.893279442311
+      11 2367.363674592119
+      12 2580.42640530541
+      13 2812.664781782897
+      14 3065.8046121433576
+      15 3341.7270272362603
+      16 3642.482459687524
+      17 3970.3058810594016
+      18 4327.633410354748
+      19 4717.120417286676
+      20 5141.661254842477
+      21 5604.4107677783
+      22 6108.807736878347
+      23 6658.6004331974
+      24 7257.874472185165
+      25 7911.083174681831
+      26 8623.080660403197
+      27 9399.157919839485
+      28 10245.08213262504
+      29 11167.139524561295
+      30 12172.182081771813
+      
+5、显示字符
+ord('1')
+49
+ord('Z')
+90
+def printChars9(ch1,ch2):
+    count = 0
+    for i in range(49,91):
+        print(chr(i),end=' ')
+        count += 1
+        if count % 10 == 0:
+            print()
+printChars9(49,90)
+
+结果：
+      1 2 3 4 5 6 7 8 9 : 
+      ; < = > ? @ A B C D 
+      E F G H I J K L M N 
+      O P Q R S T U V W X 
+      Y Z 
+      
+6、一年的天数
+def numberOfDaysInAYear(year):
+    for year in range(2010,2021):
+        if ((year % 4 == 0) and (year % 100 != 0)) or (year % 400 ==0):
+            print('366')
+        else:
+            print('365')
+numberOfDaysInAYear(year)
+
+结果:
+    365
+    365
+    366
+    365
+    365
+    365
+    366
+    365
+    365
+    365
+    366
+    
+7、几何问题
+import math
+def distance(x1,y1,x2,y2):
+    R = math.pow(x2 - x1,2)
+    RR = math.pow(y2 - y1,2)
+    D = math.sqrt(R+RR)
+    print(D)
+distance(1,2,3,4)
+
+结果：
+    2.8284271247461903
+    
+8、梅森素数
+import math
+for i in range(2,32):
+    M = math.pow(2,i) - 1
+    for j in range(2,i):
+        if(i%j==0):
+             break
+    else:
+        print(i,int(M))
+        
+ 结果：
+        2 3
+        3 7
+        5 31
+        7 127
+        11 2047
+        13 8191
+        17 131071
+        19 524287
+        23 8388607
+        29 536870911
+        31 2147483647
+        
+ 9、当前日期和时间
+ import time
+ time.localtime(time.time()) 
+ time.time()
+ 结果：
+     time.struct_time(tm_year=2019, tm_mon=5, tm_mday=10, tm_hour=22, tm_min=58, tm_sec=44, tm_wday=4, tm_yday=130, tm_isdst=0)
+     1557500377.5231001
+     
+ 10、略
+ 11、如何用Python代码发送邮件
+ from email.header import Header
+
+from email.mime.text import MIMEText
+
+from email.utils import parseaddr,formataddr
+
+import smtplib
+
+def _format_addr(s):    
+
+    name,addr = parseaddr(s)    
+
+    return formataddr((Header(name,'utf-8').encode(),addr))
+
+#发件人地址
+
+from_addr = '10******10@qq.com'
+
+#密码刚才复制的邮箱的授权码
+
+password = 'u*******************g'
+
+#收件人地址
+
+to_addr =  '10********28@qq.com'
+
+#邮箱服务器地址
+
+smtp_server = 'smtp.qq.com'
+
+#设置邮件信息
+
+msg = MIMEText('Python爬虫运行异常，异常信息为遇到HTTP 403','plain','utf-8')
+
+msg['From'] = _format_addr('Python爬虫一号<%s>'%from_addr)
+
+msg['To'] = _format_addr('管理员<%s>'%to_addr)
+
+msg['Subject'] = Header('一号爬虫运行异常.','utf-8').encode()
+
+#发送邮件
+
+server = smtplib.SMTP_SSL(smtp_server,465)
+
+#打印出和SMTP服务器交互的所有信息
+
+server.set_debuglevel(1)
+
+#登录SMTP服务器
+
+server.login(from_addr,password)
+
+#sendmail():发送邮件，由于可以一次发给多个人，所以传入一个list邮件正文是一个str，as_string()把MIMEText对象变成str。
+
+server.sendmail(from_addr,to_addr,msg.as_string())server.quit()print('邮件发送成功！')
